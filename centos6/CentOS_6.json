@@ -17,18 +17,18 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "INSANEWORKS-CentOS-6-x86_64-{{user `version`}}-{{.Provider}}.box"
+      "output": "K0HAX-CentOS-6-x86_64-{{user `version`}}-{{.Provider}}.box"
     }
   ],
   "builders": [
     {
       "type": "virtualbox-iso",
-      "iso_url": "http://ftp.iij.ad.jp/pub/linux/centos/6/isos/x86_64/CentOS-6.9-x86_64-netinstall.iso",
+      "iso_url": "http://mirror.voyant.com/centos/6/isos/x86_64/CentOS-6.9-x86_64-netinstall.iso",
       "iso_checksum": "6b2cbec908708476389b143841a8e73462506de0744bda8b4192d3655d5bb8d2",
       "iso_checksum_type": "sha256",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
-      "ssh_wait_timeout": "10m",
+      "ssh_wait_timeout": "60m",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
@@ -47,7 +47,7 @@
     },
     {
       "type": "vmware-iso",
-      "iso_url": "http://ftp.iij.ad.jp/pub/linux/centos/6/isos/x86_64/CentOS-6.9-x86_64-netinstall.iso",
+      "iso_url": "http://mirror.voyant.com/centos/6/isos/x86_64/CentOS-6.9-x86_64-netinstall.iso",
       "iso_checksum": "6b2cbec908708476389b143841a8e73462506de0744bda8b4192d3655d5bb8d2",
       "iso_checksum_type": "sha256",
       "ssh_username": "vagrant",
